@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/felipemoralesquerol/poc-express-mip/issues"
   },
-  "homepage": "https://github.com/felipemoralesquerol/poc-express-mip#readme"
+  "homepage": "https://github.com/felipemoralesquerol/poc-express-mip#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
 }
