@@ -5,4 +5,4 @@ Prueba de concepto utilizando Node JS framework web Express, MongoDB en el marco
 npm init -y
 
 # Instalación de dependencias (módulos)
-npm i express morgan nodemon mongoose -g 
+npm i express morgan nodemon cors body-parser mongoose -g 
