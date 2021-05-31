@@ -1,6 +1,6 @@
 const Contribuyentes = require('../models/Contribuyentes');
 
-// listar elementos
+// listar 
 exports.list = async (req, res) => {
   try {
     const contribuyentes = await Contribuyentes.find({});
@@ -12,7 +12,7 @@ exports.list = async (req, res) => {
   }
 };
 
-// listar elementos
+// agregar 
 exports.add = async (req, res) => {
     const contribuyentes = new Contribuyentes(req.body);
 
