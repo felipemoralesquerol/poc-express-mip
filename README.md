@@ -6,3 +6,10 @@ npm init -y
 
 # Instalación de dependencias (módulos)
 npm i express morgan nodemon cors body-parser mongoose -g 
+
+# Dependencias adicionales
+npm i bcrypt --save
+
+
+
+

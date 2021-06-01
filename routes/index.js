@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const contribuyentesController = require('../controllers/contribuyentesController');
+const userSchema = require('../controllers/contribuyentesController');
 
 module.exports = function (){
     // post: /contribuyentes
@@ -11,6 +12,8 @@ module.exports = function (){
     router.get('/contribuyentes', contribuyentesController.list);
     // get: /contribuyentes/:id
     router.get('/contribuyentes/:id', contribuyentesController.show);
+
+   
 
     return router;
 };

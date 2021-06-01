@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 //const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const mailer = require("nodemailer");
 
 const routes = require('./routes');
 
