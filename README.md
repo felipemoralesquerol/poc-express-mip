@@ -1,5 +1,6 @@
 # poc-express-mip
-Prueba de concepto utilizando Node JS framework web Express, MongoDB en el marco del sistema MIP
+Prueba de concepto utilizando Node JS framework web Express, MongoDB en el marco del sistema MIP.
+Actualmente utilizando Node Express 4.17 y MongoDB 3.6.6
 
 # Init de proyecto
 npm init -y
