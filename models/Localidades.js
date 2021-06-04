@@ -11,15 +11,15 @@ const localidadesSchema = new Schema ({
      trim : true,
  },
  poblacion: {
-     type: Integer,
+     type: Number,
      trim: true,
      unique: true,
      lowercase: true,
  },
  superficie: {
-     type: Integer,
+     type: Number,
      trim: true,
  }
 });
 
-module.exports = mongoose.model('localidades', localicadesSchema);
+module.exports = mongoose.model('localidades', localidadesSchema);
