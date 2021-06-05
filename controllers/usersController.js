@@ -3,6 +3,7 @@ const User = require('../models/User');
 // listar 
 exports.list = async (req, res) => {
   try {
+    // solamente devuelve el email ocultando la contraseña  
     const user = await User.find({}, { email:1 });
     res.json(user);
   } catch (err) {
