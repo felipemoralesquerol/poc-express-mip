@@ -3,7 +3,7 @@ const User = require('../models/User');
 // listar 
 exports.list = async (req, res) => {
   try {
-    const user = await User.find({});
+    const user = await User.find({}, { email:1 });
     res.json(user);
   } catch (err) {
     console.log(err);
