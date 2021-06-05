@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const contribuyentesController = require('../controllers/contribuyentesController');
-const userController = require('../controllers/contribuyentesController');
+const userController = require('../controllers/usersController');
 const localidadesController= require('../controllers/localidadesController');
 
 module.exports = function (){
@@ -14,13 +14,21 @@ module.exports = function (){
     // get: /contribuyentes/:id
     router.get('/contribuyentes/:id', contribuyentesController.show);
     
-    // post: /localidades
+    // localidades
+    // post: 
     router.post('/localidades', localidadesController.add);
-    // get: /localidades
+    // get: 
     router.get('/localidades', localidadesController.list);
-    // get: /localidades/:id
+    // get: 
     router.get('/localidades/:id', localidadesController.show);  
 
+    // user
+    // post: 
+    router.post('/user', userController.add);
+    // get: 
+    router.get('/user', userController.list);
+    // get: 
+    router.get('/user/:id', userController.show); 
    
 
     return router;
