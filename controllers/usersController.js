@@ -15,10 +15,10 @@ exports.list = async (req, res) => {
 
 // agregar 
 exports.add = async (req, res) => {
-    const localidades = new User(req.body);
+    const user = new User(req.body);
 
     try {
-      await localidades.save();
+      await user.save();
       res.json({message: 'Nuevo usuario agregado' });
     } catch (err) {
       console.log(err);
