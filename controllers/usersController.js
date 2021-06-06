@@ -37,7 +37,7 @@ exports.show = async (req, res, next) => {
         };
       res.json(user);
     } catch (err) {
-      //console.log(err);
+      console.log(err);
       res.status(400).json({message: 'Error al procesar la petición' });
       // next();
     }
