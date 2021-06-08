@@ -17,7 +17,7 @@ module.exports = function (){
     router.get('/localidades', localidadesController.list);
     router.get('/localidades/:id', localidadesController.show);  
 
-    // user
+    // user (usuarios)
     router.post('/user', userController.add);
     router.get('/user', userController.list);
     router.get('/user/:id', userController.show); 
