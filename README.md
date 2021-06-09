@@ -11,6 +11,9 @@ npm i express morgan nodemon cors body-parser mongoose -g
 # Dependencias adicionales
 npm i bcrypt --save
 
-
+# TODO:
+agregar soporte de Babylon
+brindar seguridad via JWT
+rework del proyecto en términos del estandard de módulos ES6
 
 
