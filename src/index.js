@@ -1,5 +1,9 @@
+import app from './app';
+import morgan from 'morgan';
+
+
 const express = require('express');
-const morgan = require('morgan');
+
 const mongoose = require('mongoose');
 //const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -8,7 +12,7 @@ const mailer = require("nodemailer");
 
 const routes = require('./routes');
 
-const app = express();
+
 
 // Conexión a Mongo
 mongoose.Promise = global.Promise;
@@ -27,7 +31,7 @@ app.use(express.urlencoded({ extended : true }));
 app.set('port', 5000)
 
 // Middleware
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 
 // definicion de rutas

@@ -12,8 +12,15 @@ npm i express morgan nodemon cors body-parser mongoose -g
 npm i bcrypt --save
 
 # TODO:
-agregar soporte de Babylon
-brindar seguridad via JWT
-rework del proyecto en términos del estandard de módulos ES6
+1) agregar soporte de Babel
+npm i @babel/core @babel/cli @babel/node @babel/preset-env -D
+Listo!
+
+1.1) crear carpetas auxiliares
+cd src
+mkdir controllers libs middlewares models routes
+
+2) brindar seguridad via JWT
+3) rework del proyecto en términos del estandard de módulos ES6
 
 
