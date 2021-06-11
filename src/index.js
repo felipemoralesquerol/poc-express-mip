@@ -1,10 +1,11 @@
 import app from './app';
 import morgan from 'morgan';
-
+import pkg from '../package.json';
+import './databases';
 
 const express = require('express');
 
-const mongoose = require('mongoose');
+
 //const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -14,11 +15,6 @@ const routes = require('./routes');
 
 
 
-// Conexión a Mongo
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/rafam',{
-    useNewUrlParser: true
-});
 
 // habilitar body parser
 app.use(express.json());
@@ -29,6 +25,7 @@ app.use(express.urlencoded({ extended : true }));
 
 // Settings
 app.set('port', 5000)
+app.set('pkg', pkg);
 
 // Middleware
 app.use(morgan('dev'));

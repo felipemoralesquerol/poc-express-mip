@@ -5,8 +5,10 @@ const router = express.Router();
 const contribuyentesController = require('../controllers/contribuyentesController');
 const userController = require('../controllers/usersController');
 const localidadesController= require('../controllers/localidadesController');
+const generalController = require('../controllers/generalController');
 
 module.exports = function (){
+    router.get('/', generalController.show);
     // contribuyentes
     router.post('/contribuyentes', contribuyentesController.add);
     router.get('/contribuyentes', contribuyentesController.list);

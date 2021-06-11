@@ -13,12 +13,13 @@ exports.list = async (req, res) => {
 };
 
 // agregar 
-exports.add = async (req, res) => {
-    const contribuyentes = new Contribuyentes(req.body);
-
+exports.add = async (req, res, next) => {
     try {
-      await contribuyentes.save();
-      res.json({message: 'Nuevo contribuyente agregado' });
+      const {nombre, apellido, telefono, email} = req.body;
+      const contribuyentes = new Contribuyentes({nombre, apellido, telefono, email});
+    
+      const contribuyenteSaved = await contribuyentes.save();
+      res.status(201).json(contribuyenteSaved);
     } catch (err) {
       console.log(err);
       res.send(err);
