@@ -19,7 +19,9 @@ const contribuyentesSchema = new Schema ({
  telefono: {
      type: String,
      trim: true,
- }
-});
+ },
+},
+{ timestamps: true }
+);
 
 module.exports = mongoose.model('contribuyentes', contribuyentesSchema);
