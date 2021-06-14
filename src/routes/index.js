@@ -13,6 +13,8 @@ module.exports = function (){
     router.post('/contribuyentes', contribuyentesController.add);
     router.get('/contribuyentes', contribuyentesController.list);
     router.get('/contribuyentes/:id', contribuyentesController.show);
+    router.delete('/contribuyentes/:id', contribuyentesController.deleteById);
+    
     
     // localidades
     router.post('/localidades', localidadesController.add);

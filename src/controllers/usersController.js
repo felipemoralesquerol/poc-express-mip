@@ -42,4 +42,22 @@ exports.show = async (req, res, next) => {
       // next();
     }
   };
+
   
+  // borrar
+// TODO
+//   exports.deleteById = async (req, res, next) => {
+//     try {
+//       console.log(req);  
+//       const user = await User.findById(req.params.id);
+//       if (!user) {
+//          res.status(404).json({message: 'Usuario no encontrado' });
+//         };
+//       res.json(user);
+//     } catch (err) {
+//       console.log(err);
+//       res.status(400).json({message: 'Error al procesar la petición' });
+//       // next();
+//     }
+//   };
+    

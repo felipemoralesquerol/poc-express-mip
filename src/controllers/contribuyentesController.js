@@ -27,7 +27,7 @@ exports.add = async (req, res, next) => {
     }
   };
   
-  // mostrar 
+// mostrar 
 exports.show = async (req, res, next) => {
     try {
       console.log(req);  
@@ -42,4 +42,20 @@ exports.show = async (req, res, next) => {
       // next();
     }
   };
-  
+
+// delete 
+exports.deleteById = async (req, res, next) => {
+    try {
+      console.log(req);  
+      const deletedContribuyente = await Contribuyentes.findByIdAndDelete(req.params.id);
+      if (!deletedContribuyente) {
+         res.status(404).json({message: 'El contribuyente no encontrado' });
+        };
+      res.json(deletedContribuyente);
+    } catch (err) {
+      //console.log(err);
+      res.status(400).json({message: 'Error al procesar la petición' });
+      // next();
+    }
+  };
+    
