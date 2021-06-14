@@ -6,7 +6,7 @@ exports.list = async (req, res) => {
     const contribuyentes = await Contribuyentes.find({});
     res.json(contribuyentes);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.send(err);
     //next();
   }
@@ -30,12 +30,14 @@ exports.add = async (req, res, next) => {
 // mostrar 
 exports.show = async (req, res, next) => {
     try {
-      console.log(req);  
+      console.log(req.params.id);  
       const contribuyente = await Contribuyentes.findById(req.params.id);
-      if (!contribuyente) {
-         res.status(404).json({message: 'El contribuyente no encontrado' });
-        };
-      res.json(contribuyente);
+      console.log(contribuyente);
+      //if (!contribuyente) {
+      //   res.status(404).json({message: 'El contribuyente no encontrado' });
+      //  };
+      //res.json(contribuyente);
+      res.status(404).json({message: 'respuesta'})
     } catch (err) {
       //console.log(err);
       res.status(400).json({message: 'Error al procesar la petición' });
@@ -46,7 +48,7 @@ exports.show = async (req, res, next) => {
 // delete 
 exports.deleteById = async (req, res, next) => {
     try {
-      console.log(req);  
+      // console.log(req);  
       const deletedContribuyente = await Contribuyentes.findByIdAndDelete(req.params.id);
       if (!deletedContribuyente) {
          res.status(404).json({message: 'El contribuyente no encontrado' });
