@@ -1,4 +1,34 @@
 const User = require('../models/User');
+import jwt from 'jsonwebtoken';
+import config from '../config';
+
+export const signUp = async (req, res) =>  {
+   const {username, email, password, roles} = req.body;
+   console.log(req.body);
+   
+   //const userFound = await User.find({email});
+
+   const newUser = new User({
+        username,
+        email,
+        password: await User.encryptPassword(password)
+    });
+    //console.log(newUser);
+    const savedUser = await newUser.save();
+    const token = jwt.sign({id: savedUser.id}, config.SECRET, {
+        expiresIn: 60000
+    }
+    );
+
+    res.json({token});
+};
+
+export const signIn = async (req, res) =>  {
+  res.json('signIn');
+};
+
+
+
 
 // listar 
 exports.list = async (req, res) => {
@@ -30,14 +60,16 @@ exports.add = async (req, res) => {
   // mostrar 
 exports.show = async (req, res, next) => {
     try {
-      console.log(req);  
+      //console.log(req);  
       const user = await User.findById(req.params.id);
       if (!user) {
          res.status(404).json({message: 'Usuario no encontrado' });
-        };
-      res.json(user);
+      } else {
+        res.json(user);  
+      };
+      
     } catch (err) {
-      console.log(err);
+      //console.log(err);
       res.status(400).json({message: 'Error al procesar la petición' });
       // next();
     }
@@ -45,19 +77,20 @@ exports.show = async (req, res, next) => {
 
   
   // borrar
-// TODO
-//   exports.deleteById = async (req, res, next) => {
-//     try {
-//       console.log(req);  
-//       const user = await User.findById(req.params.id);
-//       if (!user) {
-//          res.status(404).json({message: 'Usuario no encontrado' });
-//         };
-//       res.json(user);
-//     } catch (err) {
-//       console.log(err);
-//       res.status(400).json({message: 'Error al procesar la petición' });
-//       // next();
-//     }
-//   };
+  exports.deleteById = async (req, res, next) => {
+    try {
+      console.log(req.params.id);  
+      const user = await User.findByIdAndDelete(req.params.id);
+      if (!user) {
+         res.status(404).json({message: 'Usuario no encontrado' });
+        }else {
+         res.json(user);  
+        }
+      
+    } catch (err) {
+      //console.log(err);
+      res.status(400).json({message: 'Error al procesar la petición' });
+      // next();
+    }
+  };
     

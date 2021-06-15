@@ -8,7 +8,7 @@ const localidadesController= require('../controllers/localidadesController');
 const generalController = require('../controllers/generalController');
 
 module.exports = function (){
-    //router.get('/', generalController.show);
+    router.get('/', generalController.show);
     // contribuyentes
     router.post('/contribuyentes', contribuyentesController.add);
     router.get('/contribuyentes', contribuyentesController.list);
@@ -25,6 +25,7 @@ module.exports = function (){
     router.post('/user', userController.add);
     router.get('/user', userController.list);
     router.get('/user/:id', userController.show); 
-
+    router.delete('/user/:id', userController.deleteById);
+    
     return router;
 };

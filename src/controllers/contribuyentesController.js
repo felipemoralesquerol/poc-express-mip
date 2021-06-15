@@ -32,12 +32,13 @@ exports.show = async (req, res, next) => {
     try {
       console.log(req.params.id);  
       const contribuyente = await Contribuyentes.findById(req.params.id);
-      console.log(contribuyente);
-      //if (!contribuyente) {
-      //   res.status(404).json({message: 'El contribuyente no encontrado' });
-      //  };
-      //res.json(contribuyente);
-      res.status(404).json({message: 'respuesta'})
+      if (!contribuyente) {
+         res.status(404).json({message: 'El contribuyente no encontrado' });
+      }
+      else {
+         res.json(contribuyente);
+      };
+
     } catch (err) {
       //console.log(err);
       res.status(400).json({message: 'Error al procesar la petición' });

@@ -21,6 +21,8 @@ cd src
 mkdir controllers libs middlewares models routes
 
 2) brindar seguridad via JWT
+   
+npm i jsonwebtoken
 3) rework del proyecto en términos del estandard de módulos ES6
 
 

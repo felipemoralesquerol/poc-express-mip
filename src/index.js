@@ -12,7 +12,7 @@ const cors = require('cors');
 const mailer = require("nodemailer");
 
 const routes = require('./routes');
-
+import authRoutes from './routes/auth.routes'
 
 
 
@@ -33,7 +33,7 @@ app.use(morgan('dev'));
 
 // definicion de rutas
 app.use('/', routes());
-
+app.use('/api/auth', authRoutes);
 
 // start the server
 app.listen(app.get('port'),() =>{

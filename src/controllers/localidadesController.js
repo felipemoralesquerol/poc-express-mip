@@ -29,15 +29,18 @@ exports.add = async (req, res) => {
   // mostrar 
 exports.show = async (req, res, next) => {
     try {
-      console.log(req);  
+      //console.log(req);  
       const localidades = await Localidades.findById(req.params.id);
       if (!localidades) {
          res.status(404).json({message: 'Localidad no encontrada' });
+       }
+       else{
+            res.json(localidades);
         };
-      res.json(localidades);
-    } catch (err) {
-      //console.log(err);
-      res.status(400).json({message: 'Error al procesar la petición' });
+      } catch (err) {
+       //console.log(err);
+       console.log('Error al procesar la petición');
+       res.status(400).json({message: 'Error al procesar la petición' });
       // next();
     }
   };
