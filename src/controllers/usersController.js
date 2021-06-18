@@ -19,6 +19,7 @@ export const signUp = async (req, res) =>  {
         expiresIn: 60000
     }
     );
+    console.log(token);
 
     res.json({token});
 };
