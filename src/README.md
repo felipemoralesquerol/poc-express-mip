@@ -25,4 +25,4 @@ mkdir controllers libs middlewares models routes
 npm i jsonwebtoken
 3) rework del proyecto en términos del estandard de módulos ES6
 
-
+4) Revisión general
